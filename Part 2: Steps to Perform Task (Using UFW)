@@ -1,0 +1,38 @@
+Step 1: Check Current Firewall Status
+Before applying any changes, check the current firewall status:
+sudo ufw status verbose
+This will display whether UFW is active or inactive, and show the existing rules.
+
+----
+
+Step 2: Block Inbound Traffic on a Specific Port
+For example, if you want to block inbound traffic on port 23 (Telnet), use the following command:
+sudo ufw deny in 23
+This will prevent any incoming Telnet connections.
+
+----
+
+Step 3: Test the Block Rule
+To test the rule, you can try to connect to port 23 (Telnet) locally:
+telnet localhost 23
+If the firewall is working, the connection should be refused.
+
+----
+
+Step 4: Allow SSH (Port 22)
+If you need remote access to your Kali machine via SSH, allow traffic on port 22:
+sudo ufw allow in 22
+This ensures that SSH connections are not blocked.
+
+----
+
+Step 5: Remove the Block Rule
+If you want to remove the block rule on port 23, run:
+sudo ufw delete deny in 23
+
+----
+
+Step 6: Enable UFW (if it was not enabled)
+If UFW was inactive, enable it with the following command:
+sudo ufw enable
+
