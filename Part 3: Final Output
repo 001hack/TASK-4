@@ -1,0 +1,23 @@
+Step 1: Save the Firewall Rules to a Text File
+To create a configuration file with your applied firewall rules, run the following command:
+sudo ufw status verbose > firewall_rules.txt
+This command will redirect the output of the ufw status verbose command into a file called firewall_rules.txt.
+
+------
+
+Step 2: Verify the File Contents
+You can view the contents of the file to ensure the rules have been saved correctly. To display the file contents in the terminal, use:
+cat firewall_rules.txt
+Alternatively, open it in a text editor like nano:
+nano firewall_rules.txt
+Example Output in firewall_rules.txt:
+To                         Action      From
+--                         ------      ----
+22                         ALLOW       Anywhere
+23                         DENY        Anywhere
+
+-----
+
+Step 3: Submit or Share the Configuration File
+Now that the firewall rules are saved, you can submit or share the firewall_rules.txt file. Depending on your project or assignment requirements, you can either upload it or email it.
+
