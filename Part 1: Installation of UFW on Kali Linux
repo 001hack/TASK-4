@@ -1,0 +1,20 @@
+Step 1: Update the Package List
+First, make sure your package list is up-to-date. Open a terminal and run the following command:
+sudo apt update
+
+Step 2: Install UFW
+If UFW (Uncomplicated Firewall) is not installed, you can install it using the following command:
+sudo apt install ufw
+
+Step 3: Fixing GPG Key Errors (if any)
+If you encounter an error related to a missing GPG key (e.g., NO_PUBKEY ED65462EC8D5E4C5), you need to add the GPG key. Use one of the following methods:
+
+Method 1: Using apt-key
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ED65462EC8D5E4C5
+
+Method 2: Using curl
+curl -fsSL https://archive.kali.org/archive-key.asc | sudo tee /etc/apt/trusted.gpg.d/kali.asc
+
+Step 4: Update Package List Again
+After adding the key, update the package list once more:
+sudo apt update
